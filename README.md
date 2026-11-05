@@ -1482,3 +1482,47 @@ Employee Management System – AWS CI/CD Deployment Using Jenkins
 **Domain:** Cloud Computing / DevOps / AWS
 
 **Project Type:** Hands-on CI/CD and Cloud Deployment Project
+
+
+## Project Screenshots
+
+Click on any screenshot below to view the full image.
+
+### GitHub Repository
+[01 - GitHub Repository](docs/images/01-GitHub-Repository.png)
+
+### Jenkins CI/CD
+[02 - Jenkins Build Success](docs/images/02-Jenkins-Build-Success.png)
+
+[03 - Jenkins Freestyle Configuration](docs/images/03-Jenkins-Freestyle-Configuration.png)
+
+[04 - Jenkins Git Configuration](docs/images/04-Jenkins-Git-Configuration.png)
+
+[16 - Jenkins Build History](docs/images/16-Jenkins-Build-History.png)
+
+[17 - Jenkins Archived WAR](docs/images/17-Jenkins-Archived-WAR.png)
+
+### AWS Infrastructure
+[05 - AWS Target Group Healthy](docs/images/05-AWS-Target-Group-Healthy.png)
+
+[06 - AWS Load Balancer](docs/images/06-AWS-Load-Balancer.png)
+
+[07 - AWS ALB Listener](docs/images/07-AWS-ALB-Listener.png.png)
+
+[08 - AWS EC2 Instances](docs/images/08-AWS-EC2-Instances.png.png)
+
+[09 - AWS VPC and Subnets](docs/images/09-AWS-VPC-Subnets.png.png)
+
+[10 - AWS Security Groups](docs/images/10-AWS-Security-Groups.png.png)
+
+### Database Configuration
+[11 - AWS RDS Database](docs/images/11-AWS-RDS-Database.png.png)
+
+[12 - AWS RDS Connectivity](docs/images/12-AWS-RDS-Connectivity.png.png)
+
+[15 - MySQL Employee Records](docs/images/15-MySQL-Employee-Records.png)
+
+### Application Screenshots
+[13 - Employee Application Home](docs/images/13-Employee-App-Home.png.png)
+
+[14 - Employee Records](docs/images/14-Employee-Records.png.png)
