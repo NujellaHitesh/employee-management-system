@@ -1,32 +1,106 @@
 # Employee Management System – AWS CI/CD Deployment Using Jenkins
 
+
+## 📑 Table of Contents
+
+1. [Project Overview](#1-project-overview)
+   - [Project Objectives](#project-objectives)
+
+2. [Technologies and Tools Used](#2-technologies-and-tools-used)
+
+3. [Application Architecture](#3-application-architecture)
+   - [CI/CD Workflow](#cicd-workflow)
+
+4. [AWS Infrastructure](#4-aws-infrastructure)
+   - [AWS Region](#aws-region)
+   - [EC2 Instances](#ec2-instances)
+   - [Network Architecture](#network-architecture)
+   - [Security Group Configuration](#security-group-configuration)
+
+5. [Step 1 – Create and Configure Jenkins EC2](#5-step-1-create-and-configure-jenkins-ec2)
+   - [Install Jenkins](#install-jenkins)
+   - [Access Jenkins Dashboard](#access-jenkins-dashboard)
+   - [Jenkins Service Management Commands](#jenkins-service-management-commands)
+
+6. [Step 2 – Configure Git and Maven on Jenkins EC2](#6-step-2-configure-git-and-maven-on-jenkins-ec2)
+   - [Configure Maven in Jenkins](#configure-maven-in-jenkins)
+
+7. [Step 3 – Configure Tomcat EC2](#7-step-3-configure-tomcat-ec2)
+   - [Tomcat Configuration Files](#tomcat-configuration-files)
+   - [Configure Tomcat Manager Access](#configure-tomcat-manager-access)
+
+8. [Step 4 – Clone the GitHub Repository](#8-step-4-clone-the-github-repository)
+   - [Check Maven Configuration](#check-maven-configuration)
+
+9. [Step 5 – Build the Application Using Maven](#9-step-5-build-the-application-using-maven)
+
+10. [Step 6 – Configure Jenkins Freestyle Job](#10-step-6-configure-jenkins-freestyle-job)
+    - [Create a Jenkins Job](#create-a-jenkins-job)
+    - [Configure Source Code Management](#configure-source-code-management)
+    - [Configure Build Triggers](#configure-build-triggers)
+    - [Configure Build Environment](#configure-build-environment)
+    - [Configure Build Steps](#configure-build-steps)
+    - [Run the Jenkins Job](#run-the-jenkins-job)
+
+11. [Step 7 – Deploy WAR to Tomcat](#11-step-7-deploy-war-to-tomcat)
+    - [Test Tomcat Manager Connectivity](#test-tomcat-manager-connectivity)
+    - [Deploy the WAR Manually](#deploy-the-war-manually)
+    - [Verify Deployment](#verify-deployment)
+
+12. [Step 8 – Automate WAR Deployment Through Jenkins](#12-step-8-automate-war-deployment-through-jenkins)
+    - [Configure Jenkins Credentials](#configure-jenkins-credentials)
+    - [Configure Credentials Binding](#configure-credentials-binding)
+    - [Add Execute Shell Build Step](#add-execute-shell-build-step)
+
+13. [Step 9 – Configure Amazon RDS MySQL](#13-step-9-configure-amazon-rds-mysql)
+    - [Create an RDS MySQL Database](#create-an-rds-mysql-database)
+    - [RDS Network Configuration](#rds-network-configuration)
+    - [Find the RDS Endpoint](#find-the-rds-endpoint)
+    - [Test Database Connectivity from Tomcat](#test-database-connectivity-from-tomcat)
+    - [Application Database Configuration](#application-database-configuration)
+    - [Verify MySQL JDBC Driver](#verify-mysql-jdbc-driver)
+
+14. [Step 10 – Application Access and Verification](#14-step-10-application-access-and-verification)
+    - [Direct Tomcat Application Access](#direct-tomcat-application-access)
+    - [Application Load Balancer Access](#application-load-balancer-access)
+    - [Verify Application Components](#verify-application-components)
+
+15. [Troubleshooting](#15-troubleshooting)
+    - [Jenkins Dashboard Does Not Open](#problem-1-jenkins-dashboard-does-not-open)
+    - [Jenkins Build Fails](#problem-2-jenkins-build-fails)
+    - [Jenkins Cannot Connect to Tomcat](#problem-3-jenkins-cannot-connect-to-tomcat)
+    - [Tomcat Deployment HTTP 401](#problem-4-tomcat-deployment-fails-with-http-401)
+    - [Tomcat Deployment HTTP 403](#problem-5-tomcat-deployment-fails-with-http-403)
+    - [Application HTTP 500](#problem-6-application-returns-http-500)
+    - [MySQL Connection Fails](#problem-7-mysql-connection-fails)
+    - [ALB Target Is Unhealthy](#problem-8-alb-target-is-unhealthy)
+
+16. [Useful Linux Commands](#16-useful-linux-commands)
+    - [Jenkins Commands](#jenkins-commands)
+    - [Tomcat Commands](#tomcat-commands)
+    - [Networking Commands](#networking-commands)
+    - [Git Commands](#git-commands)
+    - [Maven Commands](#maven-commands)
+
+17. [Screenshots and Documentation](#17-screenshots-and-documentation)
+
+18. [Project Results](#18-project-results)
+
+19. [Learning Outcomes](#19-learning-outcomes)
+
+20. [Future Improvements](#20-future-improvements)
+
+21. [Repository](#21-repository)
+
+22. [Project Screenshots](#project-screenshots)
+   - [GitHub Repository](#github-repository)
+   - [Jenkins CI/CD](#jenkins-cicd)
+   - [AWS Infrastructure](#aws-infrastructure)
+   - [Database Configuration](#database-configuration)
+   - [Application Screenshots](#application-screenshots)
+
+
 ## 1. Project Overview
-
-
-# Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Project Objectives](#project-objectives)
-3. [Project Architecture](#project-architecture)
-4. [Technologies Used](#technologies-used)
-5. [AWS Infrastructure Setup](#aws-infrastructure-setup)
-6. [VPC and Subnet Configuration](#vpc-and-subnet-configuration)
-7. [EC2 Instance Configuration](#ec2-instance-configuration)
-8. [Security Groups Configuration](#security-groups-configuration)
-9. [Amazon RDS MySQL Setup](#amazon-rds-mysql-setup)
-10. [Jenkins Installation and Configuration](#jenkins-installation-and-configuration)
-11. [GitHub Integration with Jenkins](#github-integration-with-jenkins)
-12. [Maven Build Configuration](#maven-build-configuration)
-13. [WAR File Generation](#war-file-generation)
-14. [Tomcat Configuration](#tomcat-configuration)
-15. [Application Deployment](#application-deployment)
-16. [Database Connectivity](#database-connectivity)
-17. [Application Testing and Verification](#application-testing-and-verification)
-18. [CI/CD Pipeline Workflow](#cicd-pipeline-workflow)
-19. [Troubleshooting](#troubleshooting)
-20. [Project Screenshots](#project-screenshots)
-21. [Conclusion](#conclusion)
-
 
 This project demonstrates the deployment of a Java-based Employee Management System using AWS cloud infrastructure and a Jenkins Continuous Integration and Continuous Deployment (CI/CD) workflow.
 
