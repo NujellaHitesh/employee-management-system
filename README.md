@@ -1361,50 +1361,6 @@ employee-management-system/
 +-- .gitignore
 ```
 
-Only add screenshots for resources and steps that actually exist in your project.
-
-### Display Screenshots in README
-
-Use this Markdown syntax:
-
-```markdown
-## AWS Infrastructure
-
-![AWS VPC](docs/images/01-aws-vpc.png)
-
-## EC2 Instances
-
-![EC2 Instances](docs/images/03-ec2-instances.png)
-
-## Jenkins Dashboard
-
-![Jenkins Dashboard](docs/images/05-jenkins-dashboard.png)
-
-## Jenkins CI/CD Job
-
-![Jenkins Job](docs/images/06-jenkins-job.png)
-
-## Maven Build Success
-
-![Maven Build](docs/images/09-maven-build-success.png)
-
-## Tomcat Deployment
-
-![Tomcat Deployment](docs/images/12-tomcat-deployment.png)
-
-## RDS Database
-
-![RDS Database](docs/images/13-rds-database.png)
-
-## Application Running
-
-![Employee Management Application](docs/images/15-application-running.png)
-```
-
-Screenshots should be clear and readable. Hide passwords, access keys, database credentials, session tokens, and other sensitive information before uploading.
-
----
-
 ## 18. Project Results
 
 The project demonstrates the integration of cloud infrastructure and DevOps automation.
