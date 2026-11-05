@@ -2,6 +2,32 @@
 
 ## 1. Project Overview
 
+
+# Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Project Objectives](#project-objectives)
+3. [Project Architecture](#project-architecture)
+4. [Technologies Used](#technologies-used)
+5. [AWS Infrastructure Setup](#aws-infrastructure-setup)
+6. [VPC and Subnet Configuration](#vpc-and-subnet-configuration)
+7. [EC2 Instance Configuration](#ec2-instance-configuration)
+8. [Security Groups Configuration](#security-groups-configuration)
+9. [Amazon RDS MySQL Setup](#amazon-rds-mysql-setup)
+10. [Jenkins Installation and Configuration](#jenkins-installation-and-configuration)
+11. [GitHub Integration with Jenkins](#github-integration-with-jenkins)
+12. [Maven Build Configuration](#maven-build-configuration)
+13. [WAR File Generation](#war-file-generation)
+14. [Tomcat Configuration](#tomcat-configuration)
+15. [Application Deployment](#application-deployment)
+16. [Database Connectivity](#database-connectivity)
+17. [Application Testing and Verification](#application-testing-and-verification)
+18. [CI/CD Pipeline Workflow](#cicd-pipeline-workflow)
+19. [Troubleshooting](#troubleshooting)
+20. [Project Screenshots](#project-screenshots)
+21. [Conclusion](#conclusion)
+
+
 This project demonstrates the deployment of a Java-based Employee Management System using AWS cloud infrastructure and a Jenkins Continuous Integration and Continuous Deployment (CI/CD) workflow.
 
 The application is developed using Java, JSP, Jakarta Servlets, Maven, and MySQL. GitHub is used for source code management, Jenkins automates the build and deployment process, Apache Tomcat hosts the application, and Amazon RDS provides the relational database service.
